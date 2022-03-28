@@ -1,0 +1,25 @@
+.image-post {
+  cursor: pointer;
+
+  &__image {
+    position: relative;
+
+    &__like-btn {
+      position: absolute;
+      top: 20px;
+      left: 10px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__location {
+    font-size: 12px;
+    color: #767676;
+    font-weight: 500;
+    margin-left: 6px;
+  }
+}

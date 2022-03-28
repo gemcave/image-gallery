@@ -1,0 +1,15 @@
+.image-page {
+  .image-detail {
+    .social a {
+      color: #333;
+      font-size: 1rem;
+    }
+    .social a + a {
+      margin-left: 10px;
+    }
+    .container-image {
+      margin: 60px;
+      margin-top: 20px;
+    }
+  }
+}
