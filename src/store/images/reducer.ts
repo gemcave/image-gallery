@@ -22,6 +22,7 @@ interface ImagesState {
   images: Image[] | null,
   loading: boolean,
   hasErrors: boolean,
+  filterImages: boolean
 }
 
 const imagesSlice = createSlice({
@@ -31,7 +32,8 @@ const imagesSlice = createSlice({
     liked: [],
     images: null,
     loading: false,
-    hasErrors: false
+    hasErrors: false,
+    filterImages: false
   } as ImagesState,
   reducers: {
     setCurrentImage: (state, action) => {
@@ -55,11 +57,14 @@ const imagesSlice = createSlice({
       state.loading = false
       state.hasErrors = true
     },
+    setFilter: (state, {payload}) => {
+      state.filterImages = payload
+    },
   }
 });
 
 export const imagesSelector = (state: any) => state.images
-export const { setCurrentImage, setLike, setDislike, getImagesFailure, getImages, getImagesSuccess } = imagesSlice.actions;
+export const { setCurrentImage, setLike, setDislike, getImagesFailure, getImages, getImagesSuccess, setFilter } = imagesSlice.actions;
 export default imagesSlice.reducer;
 
 export function fetchImages() {
