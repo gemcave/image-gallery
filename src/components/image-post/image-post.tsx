@@ -21,7 +21,7 @@ export const ImagePost = ({ image }: Props) => {
 
   const handleClick = () => {
     dispatch(setCurrentImage(image));
-    navigate(`/images/${image.id}`);
+    navigate(`/image-gallery/images/${image.id}`);
   };
 
   const handleLikeButton = useCallback(() => {

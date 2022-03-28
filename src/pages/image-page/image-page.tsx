@@ -23,7 +23,7 @@ export const ImagePage = () => {
     <div className="container-image">
       <div>
         <div>
-          <Link to="/">
+          <Link to="/image-gallery">
             <AiOutlineArrowLeft />
           </Link>
         </div>

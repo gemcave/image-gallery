@@ -21,8 +21,8 @@ function App() {
         <div className="App">
           <Header title=".image gallery" />
           <Routes>
-            <Route path="/images/:id" element={<ImagePage />} />
-            <Route path="/" element={<HomePage />} />
+            <Route path="/image-gallery/images/:id" element={<ImagePage />} />
+            <Route path="/image-gallery" element={<HomePage />} />
           </Routes>
         </div>
       </Router>

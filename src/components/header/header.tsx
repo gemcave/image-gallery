@@ -9,7 +9,7 @@ interface Props {
 export const Header = (props: Props) => {
   return (
     <div className="header">
-      <Link to="/" className="header__logo">
+      <Link to="/image-gallery" className="header__logo">
         <div className="header__image">🖼️</div>
         <div className="header__title">{props.title}</div>
       </Link>
