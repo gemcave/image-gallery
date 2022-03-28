@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { ImagesGallery } from "../../components/images-gallery";
+import { Message } from "../../components/message/message";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { fetchImages, imagesSelector } from "../../store/images/reducer";
 
@@ -15,8 +16,16 @@ export const HomePage = () => {
     dispatch(fetchImages());
   }, [dispatch]);
 
-  if (loading) return <p>Loading...</p>;
-  if (hasErrors) return <p>⚠️</p>;
+  if (loading || hasErrors)
+    return <Message>{loading ? "Loading..." : "❌ Произошла ошибка!"}</Message>;
 
-  return <>{images && <ImagesGallery images={filtered} />}</>;
+  return (
+    <>
+      {filtered.length > 0 ? (
+        <ImagesGallery images={filtered} />
+      ) : (
+        <Message>Нет избранных изображений</Message>
+      )}
+    </>
+  );
 };
