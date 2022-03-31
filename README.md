@@ -9,3 +9,7 @@
 - Redux
 
 ---
+
+## To install dependencies && run project
+
+yarn && yarn start
