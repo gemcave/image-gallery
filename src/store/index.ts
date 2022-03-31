@@ -6,7 +6,7 @@ export const store = configureStore({
     reducer: {
         images: imagesReducer,
     },
-    preloadedState: loadState(),
+    // preloadedState: loadState(),
   })
 
 export type RootState = ReturnType<typeof store.getState>

@@ -13,7 +13,7 @@ export const Header = (props: Props) => {
   const { filterImages } = useAppSelector((state) => state.images);
   const dispatch = useAppDispatch();
 
-  const handleClick = (liked: boolean) => {
+  const handleLike = (liked: boolean) => {
     dispatch(setFilter(liked));
   };
 
@@ -23,7 +23,7 @@ export const Header = (props: Props) => {
         <div className="header__image">🖼️</div>
         <div className="header__title">{props.title}</div>
       </Link>
-      <Filter showLiked={filterImages} onClick={handleClick} />
+      <Filter showLiked={filterImages} onChange={handleLike} />
     </div>
   );
 };

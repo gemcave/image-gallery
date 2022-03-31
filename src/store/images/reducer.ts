@@ -77,7 +77,7 @@ export function fetchImages() {
           Authorization: `Client-ID ${API_KEY}`,
         },
       });
-      
+      console.log('res', res.data)
       dispatch(getImagesSuccess(res.data));
     } catch (error) {
       dispatch(getImagesFailure())

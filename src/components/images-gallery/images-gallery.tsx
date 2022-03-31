@@ -1,5 +1,6 @@
 import React from "react";
 import { ImagePost } from "../image-post";
+import { Message } from "../message";
 import "./images-gallery.scss";
 
 type Props = {
@@ -7,11 +8,13 @@ type Props = {
 };
 
 export const ImagesGallery = ({ images }: Props) => {
-  return (
+  return images?.length > 0 ? (
     <div className="images-gallery">
       {images.map((image: any) => (
         <ImagePost key={image.id} image={image} />
       ))}
     </div>
+  ) : (
+    <Message>Нет изображений</Message>
   );
 };

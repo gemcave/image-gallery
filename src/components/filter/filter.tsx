@@ -2,11 +2,11 @@ import React from "react";
 
 interface Props {
   showLiked: boolean;
-  onClick: any;
+  onChange: (liked: boolean) => void;
 }
 
-export const Filter = ({ showLiked = false, onClick }: Props) => {
-  const handleClick = () => onClick(!showLiked);
+export const Filter = ({ showLiked = false, onChange }: Props) => {
+  const handleChange = () => onChange(!showLiked);
 
   return (
     <div>
@@ -15,7 +15,7 @@ export const Filter = ({ showLiked = false, onClick }: Props) => {
         id="liked"
         name="liked"
         checked={showLiked}
-        onClick={handleClick}
+        onChange={handleChange}
       />
       <label htmlFor="liked">Избранное</label>
     </div>
